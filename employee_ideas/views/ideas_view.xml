@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="view_form_employee_ideas" model="ir.ui.view">
+		<field name="name">Ideas</field>
+		<field name="model">employee.ideas</field>
+		<field name="arch" type="xml">
+			<form string="Ideas">
+				<header>
+					<button type="object" name="waiting_progressbar" attrs="{'invisible': [('state','!=','new')]}"
+						string="Post Idea for Voting" class="oe_highlight" />
+					<button type="object" name="approve_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
+						string="Approve" class="oe_highlight" />
+					<button type="object" name="reject_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
+						string="Reject" class="oe_highlight" />
+
+					<button type="object" name="close_progressbar" attrs="{'invisible': [('state','!=','approved')]}"
+						string="Close" class="oe_highlight" />
+					<field name="state" widget="statusbar"/>
+				</header>
+				<sheet>
+					<group name="group_top">
+						<group name="group_left">
+							<field name="title" style="height: 35px; width: 250px; font-size: 25px; font-weight: bold;"/>
+							
+						</group>
+						<group name="group_right">
+								<div name="button" class="oe_right oe_button_box">
+									<button type="action" name="" class="oe_stat_button" icon="fa-archive">
+										<field name="votes" widget="statinfo"/>
+									</button>
+								</div>
+							</group>
+					</group>
+					<group name="group_bottom">
+						<group name="group_left">
+							<field name="employee"/>
+							<field name="create_date"/>
+							<field name="company"/>
+						</group>
+						<group name="group_right">
+							<field name="department"/>
+							<field name="deadline"/>
+							<field name="idea_type"/>
+						</group>
+					</group>
+					<notebook>
+                        <page name="details_page" string="Details">
+                            <field name="details" placeholder="Details..." style="height: 100px;"/>
+                        </page>
+						<page name="employee_votes" string="Employee Votes">
+							<!--<field name="comments" />-->
+                            <field name="tree_notebook" nolabel="1" colspan="4">
+								<tree string="Tree String" editable="bottom">
+									<field name="employee"/>
+									<field name="department"/>
+									<field name="comments"/>
+									<field name="rating"/>
+								</tree>
+							</field>
+                        </page>
+                    </notebook>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids"
+						widget="mail_followers" />
+					<field name="message_ids" widget="mail_thread" />
+				</div>
+			</form>
+		</field>
+	</record>
+	
+	<record id="view_tree_employee_ideas" model="ir.ui.view">
+		<field name="name">Employee Ideas Tree</field>
+		<field name="model">employee.ideas</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="title"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="view_filter_employee_ideas" model="ir.ui.view">
+		<field name="name">Employee Ideas Filter</field>
+		<field name="model">employee.ideas</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="title"/>
+			</search>
+		</field>
+	</record>
+</odoo>
