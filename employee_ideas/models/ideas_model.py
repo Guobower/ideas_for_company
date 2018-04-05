@@ -27,23 +27,14 @@ class EmployeeIdeas(models.Model):
 	rating = fields.Char('Rating')
 	tree_notebook = fields.One2many('employee.ideas', 'employee')
 	
-	@api.one
 	def waiting_progressbar(self):
 		self.write({'state': 'waiting'})
 		
-	@api.one
 	def approve_progressbar(self):
 		self.write({'state': 'approved'})
 		
-	@api.one
 	def reject_progressbar(self):
 		self.write({'state': 'new'})
 	
-	@api.one
 	def close_progressbar(self):
 		self.write({'state': 'closed'})
-		
-	#@api.one
-	#def _vote(self):
-	#	count = 10
-	#	return count
