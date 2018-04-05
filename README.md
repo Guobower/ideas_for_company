@@ -1,2 +1,3 @@
-# Employee-Ideas
-Odoo module for employee ideas
+# Ideas For Company
+
+Send Employee Ideas for Company
