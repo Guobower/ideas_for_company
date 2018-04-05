@@ -75,6 +75,9 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="title"/>
+				<field name="employee"/>
+				<field name="department"/>
+				<field name="idea_type"/>
 			</tree>
 		</field>
 	</record>
@@ -85,6 +88,14 @@
 		<field name="arch" type="xml">
 			<search>
 				<field name="title"/>
+				<filter string="New"
+					domain="[('state','=','new')]"/>
+				<filter string="Waiting for Approval"
+					domain="[('state','=','waiting')]"/>
+				<filter string="Approved"
+					domain="[('state','=','approved')]"/>
+				<filter string="Closed"
+					domain="[('state','=','closed')]"/>
 			</search>
 		</field>
 	</record>
