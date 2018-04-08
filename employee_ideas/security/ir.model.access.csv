@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_employee_ideas_group_user,employee.ideas.employee,model_employee_ideas,base.group_user,1,1,1,1
+access_idea_types_group_user,idea.types.employee,model_idea_types,base.group_user,1,1,1,1

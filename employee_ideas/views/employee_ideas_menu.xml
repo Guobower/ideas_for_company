@@ -51,7 +51,7 @@
         action="employee_ideas"/>
      
 	
-	<menuitem id="menu_configuration" name="Configuration"
+	<menuitem id="menu_configuration" name="Configuration" groups="base.group_system"
             parent="menu_ideas"/>
     
     <menuitem id="submenu_idea_types" name="Idea Types" parent="menu_configuration"

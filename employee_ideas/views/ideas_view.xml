@@ -8,12 +8,13 @@
 				<header>
 					<button type="object" name="waiting_progressbar" attrs="{'invisible': [('state','!=','new')]}"
 						string="Post Idea for Voting" class="oe_highlight" />
-					<button type="object" name="approve_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
+					<button type="object" groups="base.group_system" name="approve_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
 						string="Approve" class="oe_highlight" />
-					<button type="object" name="reject_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
+					<button type="object" groups="base.group_system" name="reject_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
 						string="Reject" class="oe_highlight" />
-
-					<button type="object" name="close_progressbar" attrs="{'invisible': [('state','!=','approved')]}"
+					<button type="action" name="%(employee_ideas_wizard.give_vote)d" attrs="{'invisible': [('state','!=','approved')]}"
+						string="Give Vote" class="oe_highlight" />
+					<button type="object" groups="base.group_system" name="close_progressbar" attrs="{'invisible': [('state','!=','approved')]}"
 						string="Close" class="oe_highlight" />
 					<field name="state" widget="statusbar"/>
 				</header>
@@ -99,4 +100,5 @@
 			</search>
 		</field>
 	</record>
+
 </odoo>
