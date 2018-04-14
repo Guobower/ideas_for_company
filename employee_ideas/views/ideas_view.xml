@@ -79,6 +79,7 @@
 				<field name="employee"/>
 				<field name="department"/>
 				<field name="idea_type"/>
+				<field name="state"/>
 			</tree>
 		</field>
 	</record>
