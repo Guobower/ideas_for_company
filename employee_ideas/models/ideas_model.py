@@ -5,6 +5,7 @@ from datetime import timedelta
 from datetime import datetime
 
 class EmployeeIdeas(models.Model):
+	_rec_name = 'title'
 	_name = 'employee.ideas'
 	_inherit = ['mail.thread']
 	_description = 'Employee Ideas'
