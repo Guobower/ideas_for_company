@@ -13,7 +13,7 @@
 					<button type="object" groups="hr.group_hr_manager" name="reject_progressbar" attrs="{'invisible': [('state','!=','waiting')]}"
 						string="Reject" class="oe_highlight" />
 					<button type="action" name="%(employee_ideas_wizard.give_vote)d" attrs="{'invisible': [('state','!=','approved')]}"
-						string="Give Vote" class="oe_highlight" />
+						string="Give Vote" class="oe_highlight" context="{'ideas_id' : id}"/>
 					<button type="object" groups="hr.group_hr_manager" name="close_progressbar" attrs="{'invisible': [('state','!=','approved')]}"
 						string="Close" class="oe_highlight" />
 					<field name="state" widget="statusbar"/>
