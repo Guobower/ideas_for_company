@@ -6,6 +6,6 @@
 			model="employee.ideas"
 			string="Print Idea"
 			report_type="qweb-pdf"
-			name="todo-report.report_template"/>
+			name="employee_ideas_app.report_template"/>
 	</data>
 </odoo>

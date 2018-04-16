@@ -8,7 +8,6 @@
                  'views/employee_ideas_menu.xml',
                  'views/ideas_types.xml',
                  'security/ir.model.access.csv',
-                 'reports/report_paperformat.xml',
-                 'reports/todo_report.xml',
-                 'reports/todo_template.xml'],
+				 'reports/todo_report.xml',
+				 'reports/todo_template.xml'],
 }
