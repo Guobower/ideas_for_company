@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="view_form_ideas_types" model="ir.ui.view">
+		<field name="name">Ideas Types</field>
+		<field name="model">idea.types</field>
+		<field name="arch" type="xml">
+			<form string="Ideas">
+				<sheet>
+					<group name="group_top">
+						<group name="group_left">
+							<field name="name" placeholder="Name"/>
+							<field name="minimum_vote"/>
+							<field name="maximum_vote"/>
+							<field name="total_ideas"/>
+						</group>
+					</group>
+					<notebook>
+						<page name="department_list" string="Department">
+							<!--<field name="comments" />-->
+                            <field name="tree_department" nolabel="1" colspan="2">
+								<tree string="Tree String" editable="bottom">
+									<field name="department" string="Name"/>
+									<field name="manager"/>
+								</tree>
+							</field>
+                        </page>
+                    </notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="view_tree_idea_types" model="ir.ui.view">
+		<field name="name">Employee Idea Types</field>
+		<field name="model">idea.types</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="minimum_vote"/>
+				<field name="maximum_vote"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="view_filter_idea_types" model="ir.ui.view">
+		<field name="name">Employee Ideas Filter</field>
+		<field name="model">idea.types</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>
+			</search>
+		</field>
+	</record>
+</odoo>
