@@ -9,21 +9,32 @@ class EmployeeIdeas(models.Model):
 	_name = 'employee.ideas'
 	_inherit = ['mail.thread']
 	_description = 'Employee Ideas'
+	
 	state = fields.Selection([
             ('new', 'New'),
             ('waiting', 'Waiting for Approval'),
             ('approved', 'Approved'),
             ('closed', 'Closed'),
             ],default='new')
+	
 	title = fields.Char('Title', required=True)
+	
 	employee = fields.Many2one('hr.employee', string='Employee', default=lambda self: self._get_default_employee(), store=True, readonly=True)
+	
 	create_date = fields.Date('Create Date', default=fields.Date.today(), store=True, readonly=True)
+	
 	company = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id, store=True, readonly=True)
+	
 	department = fields.Many2one('hr.department', 'Department', default=lambda self: self._get_default_department(), store=True, readonly=True)
+	
 	deadline = fields.Date('Deadline', required=True, default = datetime.now() + timedelta(days=14), store=True, readonly=True)
+	
 	idea_type = fields.Many2one('idea.types', 'Idea Type')
+	
 	details = fields.Char('Details', required=True)
+	
 	votes = fields.One2many('employee.ideas.votes', string='Votes')
+	
 	tree_notebook = fields.One2many('employee.ideas', 'employee')
 	
 	@api.model
