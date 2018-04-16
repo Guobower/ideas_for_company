@@ -51,12 +51,14 @@
 						<page name="employee_votes" string="Employee Votes">
 							<!--<field name="comments" />-->
                             <field name="tree_notebook" nolabel="1" colspan="4">
-								<tree string="Tree String" editable="bottom">
-									<field name="employee"/>
-									<field name="department"/>
-									<field name="comments"/>
-									<field name="rating"/>
-								</tree>
+								<field name="votes">
+									<tree string="Tree String" editable="bottom">
+										<field name="employee"/>
+										<field name="department"/>
+										<field name="comments"/>
+										<field name="rating"/>
+									</tree>
+								</field>
 							</field>
                         </page>
                     </notebook>

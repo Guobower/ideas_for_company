@@ -1,7 +1,7 @@
 <odoo>
 	<record id="Employee Votes" model="ir.ui.view">
 		<field name="name">Employee Votes</field>
-		<field name="model">employee_ideas.wizard</field>
+		<field name="model">employee.ideas.votes</field>
 		<field name="arch" type="xml">
 			<form>
 			<div id="wrapper" style="margin: 25px">
