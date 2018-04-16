@@ -18,7 +18,7 @@
 	<record id="give_vote" model="ir.actions.act_window">
 		<field name="name">Employee Votes</field>
 		<field name="type">ir.actions.act_window</field>
-		<field name="res_model">employee_ideas.wizard</field>
+		<field name="res_model">employee.ideas.votes</field>
 		<field name="view_type">form</field>
 		<field name="view_mode">form</field>
 		<field name="target">new</field>
