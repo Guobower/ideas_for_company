@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<odoo>
+	<data>
+		<report id="action_report"
+			model="employee.ideas"
+			string="Print Idea"
+			report_type="qweb-pdf"
+			name="todo-report.report_template"/>
+	</data>
+</odoo>

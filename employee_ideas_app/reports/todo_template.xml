@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<odoo>
+	<template id="report_template">
+		<t t-call="report.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="report.external_layout">
+					<div class="page">
+						<br/>
+						<div class="row" style="margin-top: 100px;">
+							<div class="col-xs-7">
+								<h2>Name Idea : <span t-field="doc.title"/></h2>
+							</div>
+						</div>
+						<div class="row mt32 mb32">
+	            <div class="col-xs-3">
+								  <strong>Idea From : <span t-field="doc.employee"/></strong><br/>
+									<strong>Deadline Vote : <span t-field="doc.deadline"/></strong><br/>
+									<strong>Idea Type : <span t-field="doc.idea_type"/></strong><br/>
+							</div>
+						</div>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>
