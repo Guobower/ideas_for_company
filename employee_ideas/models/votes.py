@@ -5,9 +5,9 @@ class Votes(models.Model):
 	
 	ideas_id = fields.Many2one('employee.ideas',string='Ideas',default=lambda self: context.get('ideas_id', False))
 	
-    employee = fields.Many2one('hr.employee', string='Employee', default=lambda self: self._get_default_employee(), readonly=True, store=True)
+	employee = fields.Many2one('hr.employee', string='Employee', default=lambda self: self._get_default_employee(), readonly=True, store=True)
 	
-    department = fields.Many2one('hr.department', 'Department')
+	department = fields.Many2one('hr.department', 'Department')
 	
 	rating = fields.Selection([
 			(0, 'Worst'),

@@ -46,7 +46,7 @@ class EmployeeIdeas(models.Model):
 	@api.model
 	def _get_default_department(self) :
 		user_id = self.env.uid
-		department_id = self._cr.execute('SELECT hr_department.id FROM hr_department, hr_employee WHERE hr_department.id = hr_employee.department_id AND hr_employee.id ' = self.employee)
+		department_id = self._cr.execute('SELECT hr_department.id FROM hr_department, hr_employee WHERE hr_department.id = hr_employee.department_id AND hr_employee.id = ' + self.employee)
 		return department_id
 		
 	@api.multi
@@ -103,7 +103,7 @@ class EmployeeIdeas(models.Model):
 				'target' : 'new',
 				'context' : {'ideas_id' : self._origin.id},
 			}
-		else
+		else :
 			return {} # Maksimal Vote Terlampaui
 	
 	def waiting_progressbar(self):
