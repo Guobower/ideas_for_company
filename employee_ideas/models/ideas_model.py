@@ -87,6 +87,24 @@ class EmployeeIdeas(models.Model):
 		
 		return super(EmployeeIdeas, self).write(vals)
 		
+	def show_wizard(self) :
+		
+		query = 'SELECT COUNT(id) FROM employee_ideas WHERE idea_type = "' + self.idea_type + '"'
+		
+		total_votes = self._cr.execute(query)
+		
+		if(self.idea_type.maximum_vote > total_votes) :
+			return {
+				'name' : 'Employee Votes',
+				'type' : 'ir.actions.act_window',
+				'res_model' : 'employee.ideas.votes',
+				'view_mode' : 'form',
+				'view_type' : 'form',
+				'target' : 'new',
+				'context' : {'ideas_id' : self._origin.id},
+			}
+		else
+			return {} # Maksimal Vote Terlampaui
 	
 	def waiting_progressbar(self):
 		self.write({'state': 'waiting'})
