@@ -33,7 +33,7 @@ class EmployeeIdeas(models.Model):
 	
 	details = fields.Char('Details', required=True)
 	
-	votes = fields.One2many('employee.ideas.votes', 'idea_id')
+	votes = fields.One2many('employee.ideas.votes', 'ideas_id')
 	
 	tree_notebook = fields.One2many('employee.ideas', 'employee')
 	
