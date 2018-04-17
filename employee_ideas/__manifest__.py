@@ -1,5 +1,5 @@
 {
-	'name': 'Employee Ideas',
+	'name': 'Employee Ideas A',
 	'description': 'This module allow employees in the company to raise and create ideas and after approval of ideas other employees in departments can vote for that idea',
 	'author': 'Gerry Agustian Juneu, Mufid J',
 	'depends': ['base', 'mail', 'hr'],

@@ -3,11 +3,11 @@ from odoo import models, fields, api
 class Votes(models.Model):
 	_name = 'employee.ideas.votes'
 	
-	ideas_id = fields.Many2one('employee.ideas',string='Ideas',default=lambda self: context.get('ideas_id', False))
+	ideas_id = fields.Many2one('employee.ideas','EmployeeIdeas',default=lambda self: context.get('ideas_id', False))
 	
 	employee = fields.Many2one('hr.employee', string='Employee', default=lambda self: self._get_default_employee(), readonly=True, store=True)
 	
-	department = fields.Many2one('hr.department', 'Department')
+	department = fields.Many2one('hr.department', 'department')
 	
 	rating = fields.Selection([
 			(0, 'Worst'),
