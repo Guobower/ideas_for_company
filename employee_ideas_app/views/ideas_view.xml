@@ -79,12 +79,13 @@
 					<h2 style="color: #3C79B5">Rating</h2>
 					<field name="rating" widget="priority"/>
 				</div>
+			
+				<tree>
+					<field name="employee"/>
+					<field name="department"/>
+					<field name="comments"/>
+				</tree>
 			</form>
-			<tree>
-				<field name="employee"/>
-				<field name="department"/>
-				<field name="comments"/>
-			</tree>
 		</field>
 	</record>
 
