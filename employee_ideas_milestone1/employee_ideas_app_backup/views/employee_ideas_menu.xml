@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<odoo>
+    <!-- Action to open To-do Task list -->
+	<!--<act_window id="employee_ideas"
+		name="Employee Ideas"
+		res_model="employee.ideas"
+		view_mode="tree,form"/>
+	
+	<menuitem id="menu_ideas" name="Ideas" action="employee_ideas"/>
+	<menuitem id="submenu_employee_ideas" name="Employee Ideas" parent ="menu_ideas" action="idea_view.view_form_ideas_types" groups="base.group_user"/>-->
+	
+	<record model="ir.actions.act_window" id="employee_ideas">
+        <field name="name">Ideas</field>
+        <field name="res_model">employee.ideas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create the first Example
+            </p>
+        </field>
+    </record>
+	
+	<record model="ir.actions.act_window" id="idea_types">
+        <field name="name">Idea Types</field>
+        <field name="res_model">idea.types</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create the first Example
+            </p>
+        </field>
+    </record>
+	
+	<record model="ir.actions.act_window" id="action_vote_button">
+        <field name="name">Votes</field>
+        <field name="res_model">employee.ideas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create the first Example
+            </p>
+        </field>
+    </record>
+	
+    <menuitem id="menu_ideas" name="Ideas"/>
+	
+    <menuitem id="menu_employee_ideas" name="Employee Ideas"
+            parent="menu_ideas"/>
+    
+    <menuitem id="submenu_ideas" name="Ideas" parent="menu_employee_ideas"
+        action="employee_ideas"/>
+     
+	
+	<menuitem id="menu_configuration" name="Configuration" groups="hr.group_hr_manager"
+            parent="menu_ideas"/>
+    
+    <menuitem id="submenu_idea_types" name="Idea Types" parent="menu_configuration"
+        action="idea_types"/>
+</odoo>
